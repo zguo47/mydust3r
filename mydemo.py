@@ -18,7 +18,8 @@ if __name__ == "__main__":
     model = AsymmetricCroCo3DStereo.from_pretrained(model_name).to(device)
     # load_images can take a list of images or a directory
     images = load_images(
-        "/nfshomes/zguo47/videosfm/4dgaussians/data/skateboard/skateboards", size=512
+        "/nfshomes/zguo47/videosfm/4dgaussians/data/skateboard/skateboards_small",
+        size=512,
     )
     pairs = make_pairs(images, scene_graph="complete", prefilter=None, symmetrize=True)
     output = inference(pairs, model, device, batch_size=batch_size)
