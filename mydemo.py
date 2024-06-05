@@ -59,7 +59,7 @@ if __name__ == "__main__":
     frames = []
 
     for i, (pose, file_path, focal) in enumerate(zip(poses, imgs, focals)):
-        frame_data = {"file_path": file_path, "pose": pose, "focal": focal}
+        frame_data = {"pose": pose.tolist(), "focal": focal}
         frames.append(frame_data)
 
     data = {"frames": frames}
